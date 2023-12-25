@@ -6,7 +6,7 @@
 
 ### Executing the Program
 
-### Limitation
+### Limitations
 
 ## Author Information
 
