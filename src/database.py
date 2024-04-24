@@ -23,6 +23,17 @@ class Database():
                         """)
         
         self.db.commit()
+        
+    def __setitem__ (self, table, values):
+        if (table == "Products"):
+            placeholders = ','.join(['?']*len(values))
+            columns = ','.join(['PRODUCT_ID', 'PRODUCT_NAME', 'PRODUCT_PRICE', 
+                                'PRODUCT_DESC', 'PRODUCT_CAT', 'PRODUCT_IMG', 
+                                'PRODUCT_RATING', 'PRODUCT_RATING_COUNT'
+                                ])
+            query = f"INSERT INTO {table}({columns}) VALUES ({placeholders})"
+            self.db.execute("""
+                            """)
     
     def __del__(self):
         self.db.close()
